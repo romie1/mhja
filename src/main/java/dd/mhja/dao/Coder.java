@@ -90,7 +90,7 @@ public class Coder {
 
     @Override
     public String toString() {
-        return "Coder [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", hireDate=" + hireDate
-                + ", salary=" + salary + (leadingTeam != null ? ", leadingTeam=" + leadingTeam.getName() : "") + "]";
+        return "Id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", hireDate=" + hireDate
+                + ", salary=" + salary + (leadingTeam != null ? ", leadingTeam=" + leadingTeam.getName() : "");
     }
 }

@@ -14,7 +14,9 @@ public class HibUtil {
             throw new IllegalStateException("Can't create EntityManagerFactory", th);
         }
     }
-
+    
+    private HibUtil() {}
+    
     public static EntityManager getEntityManager() {
         return factory.createEntityManager();
     }

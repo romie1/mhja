@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xml>
 <configuration>
+	<!-- stampa su 	console -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
+        <!-- come stampare il mio log ora, numero di thread, livello di log, nome logger, %M metodo, messaggio, &n va a capo -->
             <pattern>%d{HH:mm:ss:SSS} [%thread] %-5level %logger{36}.%M %msg%n</pattern>
         </encoder>
     </appender>
 
     <logger name="org.jboss" level="info" />
+    <!-- per hibernate, log da info in su -->
     <logger name="org.hibernate" level="info" />
+    <!--  per applicazione, fa vedere log tutto quanto -->
     <logger name="dd.mhja" level="trace" />
 
     <root level="debug">
