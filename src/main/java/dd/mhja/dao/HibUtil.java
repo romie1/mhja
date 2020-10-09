@@ -5,7 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class HibUtil {
-    private static EntityManagerFactory factory;
+	private static EntityManagerFactory factory;
 
     static {
         try {

@@ -17,9 +17,9 @@ import dd.mhja.dao.Coder;
 import dd.mhja.dao.CoderDao;
 
 @WebServlet("/coder/new")
-public class CreateCoder extends HttpServlet {
+public class CreateCoderSrv extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(CreateCoder.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CreateCoderSrv.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

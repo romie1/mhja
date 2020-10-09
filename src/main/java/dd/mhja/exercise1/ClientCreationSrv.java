@@ -12,19 +12,15 @@ import org.slf4j.LoggerFactory;
 
 
 /**
- * Servlet implementation class ClientAll
+ * Servlet implementation class CreateClient
  */
-@WebServlet("/client/all")
-public class ClientAll extends HttpServlet {
+@WebServlet("/client/new")
+public class ClientCreationSrv extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final Logger LOG = LoggerFactory.getLogger(ClientAll.class);   
+    private static final Logger LOG = LoggerFactory.getLogger(ClientCreationSrv.class);   
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 LOG.trace("enter ClientAll Servlet");
-		 
-		 ClientDAO dao = new ClientDAO();
-		 request.setAttribute("clientList", dao.getAll());
-		 request.getRequestDispatcher("/exercise1/clientList.jsp").forward(request, response);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

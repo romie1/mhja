@@ -42,8 +42,7 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return String.format("name=%s", name);
+		return String.format("Client: id= %s - name= %s \n", id, name);
 	}
-	
 	
 }
