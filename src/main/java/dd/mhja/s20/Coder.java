@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.Hibernate;
@@ -19,7 +20,8 @@ import org.hibernate.Hibernate;
 @Table(name = "CODERS")
 public class Coder {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CodGen")
+    @SequenceGenerator(sequenceName = "CODER_SEQ", allocationSize = 1, name = "CodGen")
     @Column(name = "coder_id")
     private int id;
 
@@ -112,6 +114,7 @@ public class Coder {
         }
         if (Hibernate.isInitialized(teams)) {
             sb.append(", teams=");
+            //collection teams, lo trasformo a stream, prendo metodo map (prendo la collezione teams e prendo solo i getName), metodo collect(voglio una singola stringa con tutti i getname concatenati)
             String s = teams.stream().map(Team::getName).collect(Collectors.joining(","));
             sb.append(s);
         }

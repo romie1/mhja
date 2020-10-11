@@ -9,7 +9,7 @@ public class HibUtil {
 
     static {
         try {
-            factory = Persistence.createEntityManagerFactory("me");
+            factory = Persistence.createEntityManagerFactory("hr");
         } catch (Throwable th) {
             throw new IllegalStateException("Can't create EntityManagerFactory", th);
         }

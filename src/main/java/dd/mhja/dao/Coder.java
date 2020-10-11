@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-@Entity
+@Entity(name = "Coders_dao")
 @Table(name = "CODERS")
 public class Coder {
     @Id
@@ -33,7 +33,9 @@ public class Coder {
     private LocalDate hireDate;
 
     private Double salary;
-
+    
+    //alcuni coder possono essere leadingTeam ed altri no, per questo optional = true
+    //mappedBy "leader" è mappato su Team con proprietà "private Coder leader"
     @OneToOne(optional = true, mappedBy = "leader")
     private Team leadingTeam;
 

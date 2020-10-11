@@ -29,6 +29,7 @@ public class TeamAllPlain extends HttpServlet {
         try (PrintWriter writer = response.getWriter()) {
             TeamDao dao = new TeamDao();
             List<Team> teams = dao.readAllLazy();
+//          for(Team team: teams) {writer.println(team);}
             teams.stream().forEach(writer::println);
         }
     }
